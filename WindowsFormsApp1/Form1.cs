@@ -16,5 +16,12 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            AdventureWorks2016Entities db = new AdventureWorks2016Entities();
+            var list = db.vSalesPersons.ToList();
+            chart1.DataSource = list;
+        }
     }
 }
